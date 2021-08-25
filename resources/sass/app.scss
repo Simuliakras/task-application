@@ -1,8 +1,64 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
-@import 'variables';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap');
+@import './modal';
+@import './task_item';
+@import './task_list';
+
+$poppins: 'Poppins', sans-serif;
+
+.App {
+    background-image: url("/images/polygon-background6.jpg");
+    background-repeat: repeat;
+    width: 100%;
+    min-height: 100vh;
+
+}
+
+.header {
+
+    padding: 80px 0 50px 0;
+
+    h3 {
+        font-family: $poppins;
+        text-transform: uppercase;
+        font-size: 3rem;
+        font-weight: 100;
+        letter-spacing: 0.2em;
+        color: #fff;
+    }
+
+    .main-nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        ul {
+            display: flex;
+            height: max-content;
+            align-items: center;
+            flex-wrap: wrap;
+
+            li {
+                padding: 50px;
+                margin: 20px 50px;
+                list-style: none;
+
+                a {
+                    text-decoration: none;
+                    font-family: $poppins;
+                    font-size: 1.5rem;
+                    letter-spacing: 0.15em;
+                    color: #fff;
+                    transition: 0.5s ease;
+                }
+
+                a:hover {
+                    color: #943f42;
+                }
+            }
+        }
+    }
+
+}

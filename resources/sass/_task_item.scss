@@ -1,0 +1,57 @@
+@function cardbg($opacity) {
+    @return rgba(#081340, $opacity)
+}
+
+.card {
+    width: 350px;
+    height: 300px;
+    margin: 20px;
+    background: cardbg(0.6);
+
+    .card-body {
+        display: flex;
+        flex-flow: wrap column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+
+        .card-title {
+            height: 50px;
+            display: flex;
+            align-items: center;
+
+            h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        .card-text {
+            height: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        span {
+            bottom: 0 !important;
+            padding: 2px 5px;
+        }
+    }
+
+    .card-footer {
+        display: flex;
+
+        button {
+            width: 150px;
+        }
+
+        #complete-button {
+            margin: 0 15px 3px 0;
+            background-color: #4c4650;
+        }
+
+        #delete-button {
+            background-color: #5d253e;
+            margin-bottom: 3px;
+        }
+    }
+}

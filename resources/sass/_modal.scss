@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap');
+
+$poppins: 'Poppins', sans-serif;
+
+.modal-header {
+    background-color: #5d253e;
+    border-bottom: none !important;
+    height: 120px;
+    display: flex;
+    flex-direction: column !important;
+
+    .modal-title {
+        display: flex;
+
+        h3 {
+            font-family: $poppins;
+            font-weight: 300;
+            font-size: 2rem;
+            color: #fff;
+            padding: 0 80px 0 110px;
+            margin-top: 30px;
+        }
+
+    }
+
+    .error-text {
+        font-size: 1.2rem;
+        color: red;
+        padding: 2px 5px;
+        font-weight: 600;
+        bottom: 0;
+    }
+
+}
+
+.modal-body {
+    background-color: #5d253e;
+
+    label {
+        color: #fff;
+        font-family: $poppins;
+        font-size: 1.2rem;
+        padding: 15px 0;
+    }
+
+    input, textarea {
+        background-color: #071440;
+        border: none;
+        color: #fff;
+    }
+
+    .form-control:focus {
+        background-color: #071440 !important;
+        color: #fff;
+    }
+
+    select {
+        width: 300px !important;
+    }
+}
+
+.modal-footer {
+    background-color: #5d253e;
+    border-top: none !important;
+
+    button {
+        background-color: #071440;
+        border: solid 1px #000;
+    }
+
+    button:hover {
+        background-color: #071440;
+    }
+}
