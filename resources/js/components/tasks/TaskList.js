@@ -10,7 +10,7 @@ function TaskList(props) {
                         id={task.id}
                         title={task.title}
                         description={task.description}
-                        createDate={task.createDate}
+                        createDate={task.created_at}
                     />
                 ))}
             </div>

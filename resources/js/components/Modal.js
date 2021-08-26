@@ -1,5 +1,6 @@
 import React, {useRef, useState} from "react";
 import {Button, Modal} from "react-bootstrap";
+import axios from "axios";
 
 function NewTask(props) {
     const titleInputRef = useRef();
@@ -32,9 +33,10 @@ function NewTask(props) {
                 description: enteredDescription,
             };
 
+            axios.post('/api/tasks', taskData);
+
             props.onHide();
 
-            console.log(taskData);
         }
     }
 

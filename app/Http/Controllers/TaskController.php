@@ -46,12 +46,11 @@ class TaskController extends Controller
             'title' => ['required', 'string'],
             'description' => ['required', 'string'],
         ]);
-        Task::query()
-            ->create([
-                'user_id' => Auth::id(),
-                'title' => '',
-                'description' => '',
-            ]);
+        Task::create([
+            'user_id' => Auth::id(),
+            'title' => $request->get('title'),
+            'description' => $request->get('description'),
+        ]);
 
         return response()->json();
     }
