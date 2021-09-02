@@ -1,29 +1,45 @@
 import TaskList from '../components/tasks/TaskList';
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
+import NewTask from "../components/Modal";
 import axios from "axios";
 
 function ActiveTasksPage() {
-    const [tasks, setTasks] = useState([]);
+    const [modalShow, setModalShow] = useState(false);
+    const [activeTasks, setActiveTasks] = useState([]);
+    const [updateTasks, setUpdateTasks] = useState(false);
 
-    const loadActiveTasks = async () => {
-        try {
-            const response = await axios.get(
-                '/api/tasks'
-            )
-            setTasks(response.data);
+    const updateList = () => {
+        setUpdateTasks(true);
+    }
 
-        } catch (error) {
-            console.error(error)
-        }
-    };
-
-    useEffect(async () => {
-        await loadActiveTasks();
-    }, []);
+    useEffect(() => {
+        axios.get('/api/tasks')
+            .then(res => {
+                setActiveTasks(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        setUpdateTasks(false);
+    }, [updateTasks]);
 
     return (
-        <div className="tasks-container">
-            <TaskList tasks={tasks}/>
+        <div className="active-tasks">
+            <div className="add-new-task">
+                <div className="plus-button">
+                    <a href="#" onClick={() => setModalShow(true)}>
+                        <img src="/images/plus.png" alt="Add task icon"></img>
+                    </a>
+                </div>
+                <NewTask
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                    onSubmit={updateList}
+                />
+            </div>
+            <div className="tasks-container">
+                <TaskList tasks={activeTasks}/>
+            </div>
         </div>
     )
 }

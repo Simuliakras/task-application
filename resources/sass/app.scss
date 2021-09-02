@@ -17,8 +17,7 @@ $poppins: 'Poppins', sans-serif;
 }
 
 .header {
-
-    padding: 80px 0 50px 0;
+    padding-top: 80px;
 
     h3 {
         font-family: $poppins;
@@ -60,5 +59,9 @@ $poppins: 'Poppins', sans-serif;
             }
         }
     }
+}
 
+.plus-button {
+    display: flex;
+    justify-content: center;
 }

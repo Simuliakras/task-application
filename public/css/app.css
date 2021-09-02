@@ -11582,7 +11582,7 @@ textarea.form-control-lg {
 }
 
 .header {
-    padding: 80px 0 50px 0;
+    padding-top: 80px;
 }
 .header h3, .header .h3 {
     font-family: "Poppins", sans-serif;
@@ -11618,6 +11618,12 @@ textarea.form-control-lg {
     color: #fff;
     transition: 0.5s ease;
 }
+
 .header .main-nav ul li a:hover {
     color: #943f42;
+}
+
+.plus-button {
+    display: flex;
+    justify-content: center;
 }

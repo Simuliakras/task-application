@@ -37,6 +37,8 @@ function NewTask(props) {
 
             props.onHide();
 
+            props.onSubmit();
+
         }
     }
 

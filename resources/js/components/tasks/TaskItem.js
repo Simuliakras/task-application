@@ -1,6 +1,16 @@
 import {Button, Card} from "react-bootstrap";
+import axios from "axios";
 
 function TaskItem(props) {
+
+    function deleteHandler(id) {
+        axios.delete(`/api/tasks/${id}`);
+    }
+
+    function completeHandler(id) {
+        axios.put(`/api/tasks/${id}`);
+    }
+
     return (
         <div className="card-container">
             <Card>
@@ -14,10 +24,12 @@ function TaskItem(props) {
                 </Card.Body>
                 <Card.Footer>
                     <div className="button-container">
-                        <Button variant="primary" type="submit" id="complete-button" onClick={props.onHide}>
+                        <Button variant="primary" type="submit" id="complete-button"
+                                onClick={() => completeHandler(props.id)}>
                             Complete
                         </Button>
-                        <Button variant="secondary" type="submit" id="delete-button">
+                        <Button variant="secondary" type="submit" id="delete-button"
+                                onClick={() => deleteHandler(props.id)}>
                             Delete
                         </Button>
                     </div>
